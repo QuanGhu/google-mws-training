@@ -1,12 +1,4 @@
-// import { data } from '../data.json';
 
-var mymap = L.map('mapbox').setView([1.148098, 104.020353], 13);
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1IjoicXVhbmdodSIsImEiOiJjam01enlnNzcyMGFjM3JteTE2ejU5aXE4In0.ihkp_PrrjZZo8yzAMoEbLQ'
-}).addTo(mymap);
 var markers = {
     "type": "Feature",
     "features" : [
@@ -95,7 +87,7 @@ var markers = {
 
 createPopupContent = (feature) => {
     var html = '<div class="popup_content">';
-    html += '<div class="popup_image"><img src="'+feature.properties.image+'" alt="" class="img-responsive"></div>';
+    // html += '<div class="popup_image"><img src="'+feature.properties.image+'" alt="" class="img-responsive"></div>';
     html += '<div class="popup_name">';
     html += '<p> <b>Nama Restoran : </b>'+feature.properties.name+'</p>';
     html += '<p> <b>Alamat Restoran : </b>'+feature.properties.address+'</p>';
@@ -104,9 +96,40 @@ createPopupContent = (feature) => {
     html += '</div>'; 
 	return html;
 }
-queryMarker = (feature, layer) => {
-    layer.bindPopup(createPopupContent(feature));
+
+generateReview = (data) => {
+    var html = '<p><b>Nama Restorant :</b>' +data.properties.name+ '</p>';
+    html += '<p> <b>Alamat Restoran : </b>'+data.properties.address+'</p>';
+    html += '<p> <b>Telp Restoran : </b>'+data.properties.phone+'</p>';
+    return html;
 }
-L.geoJSON(markers, {
-    onEachFeature: queryMarker
-}).addTo(mymap);
+
+generateImage = (data) => {
+    var html = '<img src="'+data.properties.image+'" alt="" class="img-responsive"></div>';
+    return html;
+}
+
+var geoJsonLayer = L.geoJSON(markers, {
+    onEachFeature: function (featureData, featureLayer) {
+        featureLayer.on('click', function () {
+          document.getElementById("gambarData").innerHTML = generateImage(featureData);
+          document.getElementById("reviewData").innerHTML = generateReview(featureData);
+        });
+        featureLayer.bindPopup(createPopupContent(featureData));
+      }
+})
+
+var map = L.map('mapbox', {
+    'layers' : [
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox.streets',
+            accessToken: 'pk.eyJ1IjoicXVhbmdodSIsImEiOiJjam01enlnNzcyMGFjM3JteTE2ejU5aXE4In0.ihkp_PrrjZZo8yzAMoEbLQ'
+        }),
+        geoJsonLayer
+    ]
+}).setView([1.148098, 104.020353], 13);
+
+
+

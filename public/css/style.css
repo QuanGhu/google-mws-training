@@ -160,3 +160,23 @@ h1 {
 b {
     font-weight: bold;
 }
+
+.container-map {
+    display: grid;
+    height : 100%;
+    grid-gap: 4px;
+    grid-template-columns: repeat(8,1fr);
+    grid-auto-rows: 60% 40%;
+}
+
+.peta {
+    grid-column: 1/-1;
+}
+
+.gambar {
+    grid-column: 1/6;
+}
+
+.review {
+    grid-column: 6/-1;
+}
