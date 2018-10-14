@@ -180,3 +180,9 @@ b {
 .review {
     grid-column: 6/-1;
 }
+
+@media(max-width : 767px) {
+    #mapbox {
+        height: auto !important;
+    }
+}
