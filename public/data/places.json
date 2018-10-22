@@ -1,0 +1,40 @@
+{
+    "places" : [
+        {
+            "id" : 1,
+            "lokasi": [1.153502, 104.008306 ], 
+            "sponsor" : "Restoran Pondok Batam Kuring",
+            "gambar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmyBgue7daO8bXJvyrP_L_zeHDikQUwX0mb3rUY2TJFVn9GxIY",
+            "review": "Ikan asam pedas terenak di batam berada di sini"
+        },
+        {
+            "id" : 2,
+            "lokasi": [1.132171,104.041487 ], 
+            "sponsor" : "Sate Domba Muda",
+            "gambar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_zDe86V2LM1as8ZJGD46liI7-h2K2zqRDQl3xDd8x2xkcBD_A",
+            "review": "Satu satu nya tempat makan sate domba di batam"
+        },
+        {
+            "id" : 3,
+            "lokasi": [1.144785, 104.017345 ], 
+            "sponsor": "King Sate",
+            "gambar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzqN3NIWM3BwXQK_HcKp6VKqLFRRk5Xm9UFjJWJ3QIR1JJj8PJwg",
+            "review": "King Sate, Raja nya sate di batam"
+        },
+        {
+            "id" : 4,
+            "lokasi": [ 1.150585 ,104.026353 ], 
+            "sponsor" : "Sate Asih",
+            "gambar": "http://3.bp.blogspot.com/-kxvHV4_gmok/TbaQ85A_NPI/AAAAAAAAAA4/WIQSsQdWBIs/s1600/IMG00481-20110426-1217.jpg",
+            "review": "Sate Kambing Terenak"
+        },
+        {
+            "id" : 5,
+            "lokasi": [ 1.160187, 104.037448  ], 
+            "sponsor" : "Restoran Golden Prawn",
+            "gambar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEs1eY5Kvf5ppxA4vp6b2_6mvpYfysqrBu4hXRmVmMh4R8cb9N",
+            "review": "Tempat Makan Seafood Terenak Di Batam"
+        }
+        
+    ]
+}

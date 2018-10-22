@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+<link rel="stylesheet" href="../css/style.css" />
+
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+   crossorigin=""></script>
+<title>Ari Putra | KEJAR 2018 | Get mapbox</title>
+</head>
+<body class="container">
+  <header>
+    <img src="../images/home.png" alt="" class="img-responsive">
+    <span> Lokasi Istimewa Dengan Mapbox</span>
+    <a href="/" class="link-breadcrumb">Kembali Ke Dashboard</a>
+  </header>
+  <nav>
+    <img src="../images/myphoto.jpeg" alt="" class="img-responsive">
+    <br />
+    <p>Email : ariteknologi@gmail.com</p>
+  </nav>
+  <main>
+    <div class="container-map">
+        <div class="peta" id="mapbox"></div>
+        <div class="gambar" id="gmb">
+
+        </div>
+        <div class="review" id="review">
+          
+        </div>
+    </div>
+  </main>
+  <footer>
+    Ari Putra
+  </footer>
+  <script>
+  var mymap = L.map('mapbox').setView([1.148098, 104.020353], 13)
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <ahref="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>,Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoicXVhbmdodSIsImEiOiJjam01enlnNzcyMGFjM3JteTE2ejU5aXE4In0.ihkp_PrrjZZo8yzAMoEbLQ'
+    }).addTo(mymap);
+  </script>
+  <script src="./map.js"></script>
+</body>
+</html>
+
+
+
+
+
+

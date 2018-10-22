@@ -10,6 +10,9 @@ var urlsToCache = [
   '/project1/index.html',
   '/project2/index.html',
   '/project2/map.js',
+  '/project3/index.html',
+  '/project3/map.js',
+  '/data/places.json',
   'https://api.tiles.mapbox.com/v4/mapbox.streets/13/6461/4071.png?access_token=pk.eyJ1IjoicXVhbmdodSIsImEiOiJjam01enlnNzcyMGFjM3JteTE2ejU5aXE4In0.ihkp_PrrjZZo8yzAMoEbLQ'
 ];
 self.addEventListener('install', function(event) {
